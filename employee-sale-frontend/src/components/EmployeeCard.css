@@ -1,0 +1,48 @@
+.employee-card {
+  background-color: #e9ecef;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.employee-card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.employee-card h3 {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.employee-card p {
+  font-size: 1rem;
+  color: #666;
+  margin: 5px 0;
+}
+
+.employee-card .button {
+  display: block;
+  padding: 8px 12px;
+  margin: 5px auto;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.employee-card .button.salary {
+  background-color: #2a9d8f;
+}
+
+.employee-card .button.resume {
+  background-color: #e76f51;
+}
+
+.employee-card .button:hover {
+  opacity: 0.9;
+}

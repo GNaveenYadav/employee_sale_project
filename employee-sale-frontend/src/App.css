@@ -1,0 +1,207 @@
+/* General styles */
+.App {
+  text-align: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: rgb(102, 181, 181);  /* Purple background */
+  color: rgb(163, 139, 139);
+  min-height: 100vh;
+}
+
+/* Marquee effect for 'Employees for Sale' */
+.marquee {
+  display: inline-block;
+  padding: 10px;
+  font-size: 2rem;
+  font-weight: bold;
+  background-color: #323532;
+  color:cyan;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  75% { transform: translateX(-100%); }
+  25% { transform: translateX(100%); }
+}
+
+/* Description text - Background color for the 'Browse' text */
+.description {
+  font-size: 1.2rem;
+  background-color:#131813;  /* Dark grey background */
+  padding: 15px;
+  border-radius: 100px;
+  
+  color:#469ac4;
+  margin-bottom: 15px;
+}
+
+/* Grid layout for employee cards */
+.employee-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Style for each employee card */
+.employee-card {
+  background-color: #fff;  /* White background for clean look */
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  transition: transform 0.2s ease-in-out;
+  border: 2px solid #ddd;  /* Light border for subtle separation */
+}
+
+.employee-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Employee photo (round) */
+.employee-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+/* Name style */
+.name {
+  background-color: #333; /* Dark grey for name */
+  color: white;
+  padding: 10px;
+  font-size: 1.2rem;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+/* Profession style */
+.profession {
+  background-color: #e0bd71; /* Light grey background */
+  color: #131212;
+  padding: 8px;
+  font-size: 1rem;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+/* Salary style */
+.salary {
+  background-color: #eee;  /* Very light grey background */
+  color: #333;
+  padding: 8px;
+  font-size: 1.1rem;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+/* Resume Button Style */
+.resume-button {
+  background-color: #2a9d8f;  /* Green background for resume button */
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background-color 0.3s;
+}
+
+.resume-button:hover {
+  background-color: #1f7f68;  /* Darker green on hover */
+}
+
+/* Modal styles for Resume */
+.resume-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.resume-modal iframe {
+  width: 80%;
+  height: 80%;
+  border: none;
+  border-radius: 5px;
+}
+
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: #e76f51;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #f4a261;
+}
+/* Payment Modal */
+.payment-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.payment-modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+}
+
+.pay-button {
+  background-color: #2a9d8f;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-right: 10px;
+}
+
+.pay-button:hover {
+  background-color: #1f7f6e;
+}
+
+.close-button {
+  background-color: #e76f51;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background-color: #f4a261;
+}
