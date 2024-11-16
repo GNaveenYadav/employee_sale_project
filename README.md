@@ -15,3 +15,8 @@ Features
 - Frontend: React.js
 - Database: MySQL
 - Other: REST API, CSS, JavaScript
+
+- Clone the repository:
+   
+   git clone https://github.com/GNaveenYadav/employee_sale_project.git
+   cd employee_sale_project
