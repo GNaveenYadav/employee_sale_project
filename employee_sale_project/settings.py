@@ -24,9 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-lo6eas82&b(ws!28*#e&==9nam9w=++4ikms%5n^mc1yf4$9w+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # ALLOWED_HOSTS using environment variables with fallback to default values
+import os
 ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'employee-sale-project-1.onrender.com,localhost,127.0.0.1').split(',')
 
 # Application definition
@@ -53,11 +54,16 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'employee_sale_project.urls'
 
+# settings.py
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [
+            # Add this path to ensure Django looks in the 'templates' directory
+            BASE_DIR / 'templates',  # This tells Django to look for templates in the global templates folder
+        ],
+        'APP_DIRS': True,  # This tells Django to look in each app's 'templates' folder
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
