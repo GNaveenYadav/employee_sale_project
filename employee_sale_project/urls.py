@@ -1,9 +1,7 @@
-# employee_sale_project/urls.py
-
-from employees import views  # Import the views module from employees app
-from django.urls import path
+from django.contrib import admin
+from django.urls import path, include  # Import 'include' to include app URLs
 
 urlpatterns = [
-    # Add your URL patterns here
-    path('', views.home, name='home'),  # Example URL pattern using views from the employees app
+    path('admin/', admin.site.urls),  # Admin route
+    path('', include('employees.urls')),  # Include employees app routes
 ]

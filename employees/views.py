@@ -1,5 +1,10 @@
+from django.contrib import admin
+from django.urls import path
+from django.views.generic import TemplateView
 from django.shortcuts import render
 
-# Create your views here.
+
+ # Correct usage of TemplateView
+
 def home(request):
-    return render(request, 'index.html')
+     return render(request, 'employees/home.html')  # Ensure the template exists at the specified path

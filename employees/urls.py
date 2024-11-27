@@ -1,10 +1,6 @@
-from django.contrib import admin
 from django.urls import path
-from employees import views  # Correct import from employees app
-from django.views.generic import TemplateView
+from . import views  # Import views from the same directory
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name="index.html")),
-    path('', views.home, name='home'),  # Now calling the correct view
+    path('', views.home, name='home'),  # Define a route for the home view
 ]

@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 import os
+import django_heroku
+import os
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-lo6eas82&b(ws!28*#e&==9nam9w=++4ikms%5n^mc1yf4$9w+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS using environment variables with fallback to default values
 import os
@@ -39,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+     'employees'
 ]
 
 MIDDLEWARE = [
@@ -56,14 +60,13 @@ ROOT_URLCONF = 'employee_sale_project.urls'
 
 # settings.py
 
+import os
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            # Add this path to ensure Django looks in the 'templates' directory
-            BASE_DIR / 'templates',  # This tells Django to look for templates in the global templates folder
-        ],
-        'APP_DIRS': True,  # This tells Django to look in each app's 'templates' folder
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Add your global templates directory here
+        'APP_DIRS': True,  # Enable app-level template discovery
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -74,6 +77,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'employee_sale_project.wsgi.application'
 
@@ -123,11 +127,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+django_heroku.settings(locals())
+
+
