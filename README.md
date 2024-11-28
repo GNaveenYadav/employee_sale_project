@@ -2,6 +2,8 @@ Employee Sales Platform
 
 This project is a platform where you can browse, view, and "buy" talented professionals for an annual price.
 
+Press this link to see the output:https://employees-for-sale.onrender.com
+
 Features
 
 - Display employee details in a 3x3 grid format.
